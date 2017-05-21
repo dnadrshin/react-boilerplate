@@ -6,6 +6,7 @@ const Menu = props => <div>
 		<li><Link to={'/'}>main</Link></li>
 		<li><Link to={'/settings'}>settings</Link></li>
 		<li><Link to={'/chat'}>chat</Link></li>
+		<li><Link to={'/github'}>GitHub</Link></li>
 	</ul>
 </div>
 
