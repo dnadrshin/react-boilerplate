@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Switch, Route, Link, BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
-import { createStore } from 'redux'
+import logger from 'redux-logger'
+import { applyMiddleware, createStore } from 'redux'
 import Settings from './settings'
 import Chat from './chat'
 import Menu from './menu'
@@ -23,7 +24,7 @@ var reducer = (state = 1, action) => {
 	}
 }
 
-var store = createStore(reducer)
+var store = createStore(reducer, applyMiddleware(logger))
 
 
 ReactDOM.render(
