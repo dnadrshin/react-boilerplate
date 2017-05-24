@@ -3,20 +3,15 @@ import ReactDOM from 'react-dom'
 import { Switch, Route, Link, BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import logger from 'redux-logger'
-import { applyMiddleware, createStore, combineReducers } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import Settings from './Settings'
 import Chat from './chat'
 import Menu from './menu'
 import Github from './github'
-import settingsReducer from './Settings/reducer'
+import reducer from './reducer'
 
 let someData = [1,2,3,4,5],
 	GithubList = () => <Github list={someData}/>
-
-
-let reducer = combineReducers({
-	settings: settingsReducer
-})
 
 let store = createStore(reducer, applyMiddleware(logger))
 
