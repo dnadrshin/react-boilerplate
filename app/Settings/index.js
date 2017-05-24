@@ -15,7 +15,7 @@ class Settings extends React.Component {
 
 	render(){
 		return <div>
-			<h1>Settings {this.props.state.settings}</h1>
+			<h1>Settings {this.props.state.settings.counter}</h1>
 			<button onClick={this.props.increase}>+</button>
 			<button onClick={this.props.decrease}>-</button>
 			<button onClick={() => this.doSet()}>set</button>
@@ -27,6 +27,7 @@ export default connect(
 	state => ({
 		state: state
 	}),
+
 	(dispatch, props) => ({
 		set     : id => dispatch(actions.dataSet(id)),
 		increase: () => dispatch({type:'INCREASE'}),

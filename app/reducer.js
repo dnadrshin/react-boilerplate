@@ -1,8 +1,6 @@
 import settingsReducer from './Settings/reducer'
 import { combineReducers } from 'redux'
 
-let reducer = combineReducers({
+export default combineReducers({
 	settings: settingsReducer
 })
-
-export default reducer

@@ -1,13 +1,22 @@
-export default (state = 0, action) => {
+export default (state = {counter: 5}, action) => {
 	switch (action.type) {
 		case "INCREASE":
-			return state + 1
+			return {
+				...state,
+				counter: state.counter+1
+			}
 
 		case "DECREASE":
-			return state - 1
+			return {
+				...state,
+				counter: state.counter-1
+			}
 
 		case "SET":
-			return action.id
+			return {
+				...state,
+				counter: action.id
+			}
 
 		default:
 			return state
