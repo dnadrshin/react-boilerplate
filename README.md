@@ -2,6 +2,6 @@
 
 Simple React redux boilplate with webpack and router
 
-To start:<br>
+To start - clone project and then:<br>
 `npm i`<br>
 `yarn start`
