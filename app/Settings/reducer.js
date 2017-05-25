@@ -1,24 +1,27 @@
-export default (state = {counter: 5}, action) => {
-	switch (action.type) {
-		case "INCREASE":
-			return {
-				...state,
-				counter: state.counter+1
-			}
+import { createReducer } from '../helpers'
 
-		case "DECREASE":
-			return {
-				...state,
-				counter: state.counter-1
-			}
+const
+	increase = (state, action) => ({
+		...state,
+		counter: state.counter+1
+	}),
 
-		case "SET":
-			return {
-				...state,
-				counter: action.id
-			}
+	decrease = (state, action) => ({
+		...state,
+		counter: state.counter-1
+	}),
 
-		default:
-			return state
-	}
-}
+	set = (state, action) => ({
+		...state,
+		counter: action.id
+	}),
+
+	actions = {
+		'INCREASE': increase,
+		'DECREASE': decrease,
+		'SET'     : set
+	},
+
+	initialState = {counter: 5};
+
+export default (state = initialState, action = {}) => createReducer(state, action, actions)

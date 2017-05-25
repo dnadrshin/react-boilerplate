@@ -15,6 +15,8 @@ let someData = [1,2,3,4,5],
 
 let store = createStore(reducer, applyMiddleware(logger))
 
+console.log(store.getState())
+
 ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
