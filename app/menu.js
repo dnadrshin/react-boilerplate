@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-const Menu = props => <div>
+const Menu = () => <div>
 	<ul>
 		<li><Link to={'/'}>main</Link></li>
 		<li><Link to={'/settings'}>settings</Link></li>

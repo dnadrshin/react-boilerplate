@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
 import actions from './actions'
 
 class Settings extends React.Component {
@@ -9,11 +8,11 @@ class Settings extends React.Component {
 		super(props)
 	}
 
-	doSet(id) {
+	doSet() {
 		this.props.set(10)
 	}
 
-	render(){
+	render() {
 		//{increase, decrease, settings} = this.props
 		return <div>
 			<h1>Settings {this.props.settings.counter}</h1>
@@ -26,12 +25,12 @@ class Settings extends React.Component {
 
 export default connect(
 	state => ({
-		settings: state.settings
+		settings: state.settings,
 	}),
 
-	(dispatch, props) => ({
+	dispatch => ({
+		decrease: () => dispatch({type: 'DECREASE'}),
+		increase: () => dispatch({type: 'INCREASE'}),
 		set     : id => dispatch(actions.dataSet(id)),
-		increase: () => dispatch({type:'INCREASE'}),
-		decrease: () => dispatch({type:'DECREASE'})
 	})
 )(Settings)

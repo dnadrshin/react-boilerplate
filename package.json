@@ -1,15 +1,20 @@
 {
-  "name": "React-redux boilerplate",
+  "name": "react-redux-boilerplate",
   "version": "1.0.0",
   "description": "React redux webpack boilerplate with router",
   "main": "index.js",
+  "author": "dnadrshin <dimankaliningrad@gmail.com>",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "lint": "eslint app"
   },
-  "author": "dnadrshin <dimankaliningrad@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-react": "^7.0.1",
     "html-webpack-plugin": "^2.28.0",
     "keymirror": "^0.1.1",
     "path": "^0.12.7",

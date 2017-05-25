@@ -1,12 +1,12 @@
 import keyMirror from 'keymirror';
 
 const
-	dataSet = id => ({type: "SET", id}),
+	dataSet = id => ({id, type: 'SET'}),
 
 	types = keyMirror({
-		SET     : null,
+		DECREASE: null,
 		INCREASE: null,
-		DECREASE: null
+		SET     : null,
 	})
 
 export default {dataSet, types}

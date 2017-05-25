@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Switch, Route, Link, BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux';
+import {Switch, Route, Link, BrowserRouter} from 'react-router-dom'
+import {Provider} from 'react-redux';
 import logger from 'redux-logger'
-import { applyMiddleware, createStore } from 'redux'
+import {applyMiddleware, createStore} from 'redux'
 import Settings from './Settings'
 import Chat from './chat'
 import Menu from './menu'
@@ -11,7 +11,7 @@ import Github from './github'
 import reducer from './reducer'
 
 let someData = [1,2,3,4,5],
-	GithubList = () => <Github list={someData}/>
+	GithubList = () => <Github list={someData} />
 
 let store = createStore(reducer, applyMiddleware(logger))
 
@@ -19,7 +19,7 @@ ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
 			<div>
-				<Menu/>
+				<Menu />
 				<Switch>
 					<Route exact path="/" component={Settings} />
 					<Route path="/settings" component={Settings} />
