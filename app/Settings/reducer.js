@@ -1,27 +1,22 @@
 import { createReducer } from '../helpers'
+import actions from './actions'
 
 const
-	increase = (state, action) => ({
-		...state,
-		counter: state.counter+1
-	}),
+	initialState = {counter: 5};
 
-	decrease = (state, action) => ({
-		...state,
-		counter: state.counter-1
-	}),
-
-	set = (state, action) => ({
+export default (state = initialState, action = {}) => createReducer(state, action, {
+	[actions.types.SET]: () => ({
 		...state,
 		counter: action.id
 	}),
 
-	actions = {
-		'INCREASE': increase,
-		'DECREASE': decrease,
-		'SET'     : set
-	},
+	[actions.types.INCREASE]: () => ({
+		...state,
+		counter: state.counter-1
+	}),
 
-	initialState = {counter: 5};
-
-export default (state = initialState, action = {}) => createReducer(state, action, actions)
+	[actions.types.DECREASE]: () => ({
+		...state,
+		counter: state.counter+1
+	})
+});

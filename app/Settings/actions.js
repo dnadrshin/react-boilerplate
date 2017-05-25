@@ -1,6 +1,12 @@
-const dataSet = id => ({
-	type: "SET",
-	id
-})
+import keyMirror from 'keymirror';
 
-export default { dataSet }
+const
+	dataSet = id => ({type: "SET", id}),
+
+	types = keyMirror({
+		SET     : null,
+		INCREASE: null,
+		DECREASE: null
+	})
+
+export default {dataSet, types}
