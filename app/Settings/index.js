@@ -1,7 +1,10 @@
+//@flow
+
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import actions from './actions'
+import InnerComponent from './InnerComponent'
 
 class Settings extends React.Component {
 	constructor(props) {
@@ -19,6 +22,7 @@ class Settings extends React.Component {
 			<button onClick={this.props.increase}>+</button>
 			<button onClick={this.props.decrease}>-</button>
 			<button onClick={() => this.doSet()}>set</button>
+			<InnerComponent increase={this.props.increase} />
 		</div>
 	}
 }
