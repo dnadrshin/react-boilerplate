@@ -5,7 +5,7 @@ const
 	InnerComponent = (props: {
 		increase?: () => {}
 	}) => <div>
-		<button onClick={props.increase}>GET</button>
+		<button onClick={props.increase}>Async get-set</button>
 	</div>
 
 export default InnerComponent

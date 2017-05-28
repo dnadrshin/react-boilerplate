@@ -12,12 +12,9 @@ import Github from './github'
 import reducer from './reducer'
 import mySaga from './sagas'
 
-const sagaMiddleware = createSagaMiddleware();
-
-
-fetch('http://localhost:4000/API/', {}).then(response => response.json()).then(data => console.log(data))
-
-let someData = [1,2,3,4,5],
+const 
+	sagaMiddleware = createSagaMiddleware(),
+	someData = [1,2,3,4,5],
 	GithubList = () => <Github list={someData} />
 
 let store = createStore(reducer, applyMiddleware(logger, sagaMiddleware))
