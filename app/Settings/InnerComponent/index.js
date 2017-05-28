@@ -1,8 +1,11 @@
+//@flow
 import React from 'react'
 
 const
-	 InnerComponent = props => <div>
-		<button onClick={props.increase}>new +</button>
+	InnerComponent = (props: {
+		increase?: () => {}
+	}) => <div>
+		<button onClick={props.increase}>GET</button>
 	</div>
 
 export default InnerComponent

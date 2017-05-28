@@ -22,7 +22,7 @@ class Settings extends React.Component {
 			<button onClick={this.props.increase}>+</button>
 			<button onClick={this.props.decrease}>-</button>
 			<button onClick={() => this.doSet()}>set</button>
-			<InnerComponent increase={this.props.increase} />
+			<InnerComponent increase={this.props.get} />
 		</div>
 	}
 }
@@ -36,5 +36,6 @@ export default connect(
 		decrease: () => dispatch({type: 'DECREASE'}),
 		increase: () => dispatch({type: 'INCREASE'}),
 		set     : id => dispatch(actions.dataSet(id)),
+		get     : () => dispatch({type: 'SETTINGS_FETCH_REQUESTED'})
 	})
 )(Settings)

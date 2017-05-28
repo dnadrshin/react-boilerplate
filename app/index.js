@@ -4,16 +4,24 @@ import {Switch, Route, Link, BrowserRouter} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import logger from 'redux-logger'
 import {applyMiddleware, createStore} from 'redux'
+import createSagaMiddleware from 'redux-saga'
 import Settings from './Settings'
 import Chat from './chat'
 import Menu from './menu'
 import Github from './github'
 import reducer from './reducer'
+import mySaga from './sagas'
+
+const sagaMiddleware = createSagaMiddleware();
+
+
+fetch('http://localhost:4000/API/', {}).then(response => response.json()).then(data => console.log(data))
 
 let someData = [1,2,3,4,5],
 	GithubList = () => <Github list={someData} />
 
-let store = createStore(reducer, applyMiddleware(logger))
+let store = createStore(reducer, applyMiddleware(logger, sagaMiddleware))
+sagaMiddleware.run(mySaga);
 
 ReactDOM.render(
 	<Provider store={store}>

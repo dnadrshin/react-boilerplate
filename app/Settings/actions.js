@@ -7,6 +7,7 @@ const
 		DECREASE: null,
 		INCREASE: null,
 		SET     : null,
+		GET     : null,
 	})
 
 export default {dataSet, types}
