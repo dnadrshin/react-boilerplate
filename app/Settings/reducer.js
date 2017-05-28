@@ -19,11 +19,4 @@ export default (state = initialState, action = {}) => createReducer(state, actio
 		...state,
 		counter: state.counter-1,
 	}),
-	[actions.types.GET]: () => {
-		fetch('http://localhost:4000/settings')
-		
-		return ({
-			...state
-		})
-	}
 });

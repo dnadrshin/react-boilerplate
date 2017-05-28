@@ -34,8 +34,8 @@ export default connect(
 
 	dispatch => ({
 		decrease: () => dispatch({type: 'DECREASE'}),
+		get     : () => dispatch({type: 'SETTINGS_FETCH_REQUESTED'}),
 		increase: () => dispatch({type: 'INCREASE'}),
 		set     : id => dispatch(actions.dataSet(id)),
-		get     : () => dispatch({type: 'SETTINGS_FETCH_REQUESTED'})
 	})
 )(Settings)

@@ -1,5 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
-
+import {call, put, takeEvery} from 'redux-saga/effects'
 
 const
 	settingsResp = fetch('http://localhost:4000/API/', {})
@@ -7,20 +6,16 @@ const
 	.then(data => data)
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchUser(action) {
-   try {
-      const settings = yield call(() => settingsResp);
-      yield put({type: "SET", id: settings.number});
-   } catch (e) {
-      yield put({type: "SETTINGS_FETCH_FAILED", message: e.message});
-   }
+function* fetchSettings() {
+	try {
+		const settings = yield call(() => settingsResp);
+		yield put({id: settings.number, type: 'SET'});
+	} catch(e) {
+		yield put({message: e.message, type: 'SETTINGS_FETCH_FAILED'});
+	}
 }
 
-/*
-  Starts fetchUser on each dispatched `USER_FETCH_REQUESTED` action.
-  Allows concurrent fetches of user.
-*/
 function* mySaga() {
-  yield takeEvery("SETTINGS_FETCH_REQUESTED", fetchUser);
+	yield takeEvery('SETTINGS_FETCH_REQUESTED', fetchSettings);
 }
 export default mySaga;

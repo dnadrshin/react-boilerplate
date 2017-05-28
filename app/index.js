@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Switch, Route, Link, BrowserRouter} from 'react-router-dom'
+import {Switch, Route, BrowserRouter} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import logger from 'redux-logger'
 import {applyMiddleware, createStore} from 'redux'
