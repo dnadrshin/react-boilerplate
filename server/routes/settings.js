@@ -3,8 +3,8 @@ var router = express.Router();
 
 
 var settings = {
-	chat: 'some name',
-	number: 333
+	chat  : 'some name',
+	number: 333,
 }
 
 /* GET users listing. */

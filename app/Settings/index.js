@@ -1,13 +1,22 @@
 //@flow
 
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import actions from './actions'
 import InnerComponent from './InnerComponent'
 
-class Settings extends React.Component {
-	constructor(props) {
+class Settings extends Component {
+	constructor(props: {
+		decrease: () => {},
+		get: () => {},
+		increase: () => {},
+		set: () => {},
+
+		settings: {
+			counter: number
+		},
+	}) {
 		super(props)
 	}
 
