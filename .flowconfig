@@ -1,0 +1,14 @@
+[ignore]
+<PROJECT_ROOT>/build/**/.*
+<PROJECT_ROOT>/node_modules/enzyme-matchers/**/*
+<PROJECT_ROOT>/node_modules/fbjs/**/*
+<PROJECT_ROOT>/node_modules/jest-enzyme/**/*
+<PROJECT_ROOT>/node_modules/stylelint/**/*
+<PROJECT_ROOT>/node_modules/flow-runtime/**/*
+<PROJECT_ROOT>/node_modules/babel-plugin-flow-runtime/**/*
+<PROJECT_ROOT>/node_modules/jest-validate/**/*
+
+[options]
+module.name_mapper='^dll/\([A-z0-9\-]+\)' -> '\1'
+module.system.node.resolve_dirname=app
+module.system.node.resolve_dirname=node_modules

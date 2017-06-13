@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings has 4 buttons has footer bar shown across all pages 1`] = `
+<Connect(Settings)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Settings
+    decrease={[Function]}
+    get={[Function]}
+    increase={[Function]}
+    set={[Function]}
+    settings={Object {}}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <div>
+      <h1>
+        Settings 
+      </h1>
+      <button
+        onClick={[Function]}
+      >
+        +
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        -
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        set
+      </button>
+      <InnerComponent
+        increase={[Function]}
+      >
+        <div>
+          <button
+            onClick={[Function]}
+          >
+            Async get-set
+          </button>
+        </div>
+      </InnerComponent>
+    </div>
+  </Settings>
+</Connect(Settings)>
+`;
