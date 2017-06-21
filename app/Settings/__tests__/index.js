@@ -8,11 +8,11 @@ const
 	instance = mount(<Settings store={configureStore()({
 		settings: {
 			
-		}
+		},
 	})} />);
 
-describe('Settings has 4 buttons', () => {
-	it('has footer bar shown across all pages', () => {
+describe('Settings module', () => {
+	it('has four buttons', () => {
 		expect(toJson(instance)).toMatchSnapshot();
 		expect(instance.find('button')).toHaveLength(4);
 	});
